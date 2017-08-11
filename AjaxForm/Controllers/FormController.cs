@@ -22,9 +22,19 @@ namespace AjaxForm.Controllers
                 OptOut = true },
         };
 
+        [HttpGet]
         public IHttpActionResult Get()
         {
             return Ok(listOfForms);
+        }
+
+        [HttpPost]
+        public IHttpActionResult AddForm(FormModel form)
+        {
+            var db = new MarbleContext();
+            db.Marbles.Add(marble);
+            db.SaveChanges();
+            return Ok(marble);
         }
     }
 }
