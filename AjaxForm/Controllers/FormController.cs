@@ -29,13 +29,6 @@ namespace AjaxForm.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            // Session per user
-            var timeUserFirstCameToSite = HttpContext.Current.Session["userTime"];
-            if (timeUserFirstCameToSite == null)
-            {
-                HttpContext.Current.Session.Add("userTime", DateTime.Now);
-            }
-            ViewBag.FromSession = HttpContext.Current.Session["userTime"];
 
             return Ok(listOfForms);
         }
