@@ -5,13 +5,13 @@
 <div class="wrapper">
     <form class="form-signin">
         <h2 class="form-signin-heading">Lead Entry</h2>
-        <input class="form-control" placeholder="First Name" required="" />
-        <input class="form-control"  placeholder="Last Name" required="" />
-        <input class="form-control" placeholder="Email" required="" />
-        <input class="form-control" placeholder="Phone" required="" />
+        <input class="form-control" id ="firstName" placeholder="First Name" required="" />
+        <input class="form-control"  id ="lastName" placeholder="Last Name" required="" />
+        <input class="form-control" id ="email" placeholder="Email" required="" />
+        <input class="form-control" id ="firstName" placeholder="Phone" required="" />
         <div class="form-group">
-            <label for="sel1">Mobile Phone #:</label>
-            <select class="form-control" id="sel1">
+            <label for="cell">Mobile Phone #:</label>
+            <select class="form-control" id="cell">
                 <option>Yes</option>
                 <option>No</option>
             </select>
@@ -19,7 +19,7 @@
         <label class="checkbox">
             <input type="checkbox" value="optOut" id="optOut" name="optOut"> Opt out of Email
         </label>
-        <button class="btn btn-lg btn-primary" type="submit">Add Lead</button>
+        <button onclick="sendForm();" class="btn btn-lg btn-primary" type="submit">Add Lead</button>
     </form>
 </div>
 
