@@ -50,7 +50,7 @@ namespace AjaxForm.Controllers
 
             // Session per user
             if (HttpContext.Current.Session != null
-                && HttpContext.Current.Session["LOGIN"] != null)
+                && HttpContext.Current.Session["forms"] != null)
             {
                 var userSession = new UserSessionDataModel
                 {

@@ -35,14 +35,17 @@ body {
     margin-left: 0px;
     margin-right: 0px;
     padding: 0;
+    
 }
 
 .container {
     margin-right: 0px;
     margin-left: 0px;
+
 }
 
 .wrapper {	
+    width: 100%;
     margin-top: 80px;
   margin-bottom: 80px;
   margin-left: 0;
@@ -67,5 +70,15 @@ body {
 
 .navbar-inverse .navbar-brand {
     color: orange;
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+}
+
+.sessionButton {
+    display: flex;
+    justify-content: center;
 }
 
