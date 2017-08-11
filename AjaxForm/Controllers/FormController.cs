@@ -6,6 +6,9 @@ using System.Net.Http;
 using System.Web.Http;
 using AjaxForm.Models;
 using AjaxForm.DataContext;
+using System.Web;
+
+
 
 namespace AjaxForm.Controllers
 {
@@ -26,6 +29,14 @@ namespace AjaxForm.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
+            // Session per user
+            var timeUserFirstCameToSite = HttpContext.Current.Session["userTime"];
+            if (timeUserFirstCameToSite == null)
+            {
+                HttpContext.Current.Session.Add("userTime", DateTime.Now);
+            }
+            ViewBag.FromSession = HttpContext.Current.Session["userTime"];
+
             return Ok(listOfForms);
         }
 
