@@ -43,6 +43,7 @@ let sendForm = () => {
         type: "POST",
         success: (data) => {
             addToList(data);
+            console.log("success");
         },
         error: (data) => {
             console.log("oops", data)
