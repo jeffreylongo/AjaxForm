@@ -30,7 +30,7 @@ namespace AjaxForm.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult AddForm(FormModel form)
+        public IHttpActionResult AddForm([FromBody]FormModel form)
         {
             var db = new FormContext();
             db.Forms.Add(form);

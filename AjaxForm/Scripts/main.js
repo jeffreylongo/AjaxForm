@@ -23,13 +23,8 @@ let addToList = (data) => {
 }
 
 //take data from form and send through api to ajax as new form data
-let sendForm = () => {
-
+let sendForm = (e) => {
     var modelObj = {};
-    modelObj.Id = $('#id').val();
-    if (modelObj.Id = null) {
-        modelObj.Id = modelObj.Phone;
-    }
     modelObj.FirstName = $('#firstName').val();
     modelObj.LastName = $('#lastName').val();
     modelObj.Phone = $('#phone').val();
@@ -38,12 +33,12 @@ let sendForm = () => {
     modelObj.OptOut = $('#optOut').val();
 
     var postObj = JSON.stringify(modelObj);
-
+    console.log("posting", modelObj)
     $.ajax({
         url: "/api/form",
         dataType: "json",
         contentType: "application/json",
-        data: { form: postObj }, 
+        data: JSON.stringify(modelObj), 
         type: "POST",
         success: (data) => {
             addToList(data);
@@ -51,6 +46,7 @@ let sendForm = () => {
         },
         error: (data) => {
             console.log("oops", data)
+            console.log(data)
         },
         complete: (data) => {
             console.log("done", data);
