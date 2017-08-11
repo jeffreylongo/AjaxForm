@@ -34,7 +34,14 @@ namespace AjaxForm.Controllers
         {
             var db = new FormContext();
             db.Forms.Add(form);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                return Ok(form);
+            }
             return Ok(form);
         }
     }
