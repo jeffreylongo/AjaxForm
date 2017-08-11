@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using AjaxForm.Models;
+using AjaxForm.DataContext;
 
 namespace AjaxForm.Controllers
 {
@@ -31,10 +32,10 @@ namespace AjaxForm.Controllers
         [HttpPost]
         public IHttpActionResult AddForm(FormModel form)
         {
-            var db = new MarbleContext();
-            db.Marbles.Add(marble);
+            var db = new FormContext();
+            db.Forms.Add(form);
             db.SaveChanges();
-            return Ok(marble);
+            return Ok(form);
         }
     }
 }
