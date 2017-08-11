@@ -40,7 +40,7 @@ let sendForm = () => {
         contentType: "application/json",
         data: JSON.stringify(newForm),
         type: "POST",
-        success: (data) = {
+        success: (data) => {
             addToList(data);
         },
         error: (data) => {
