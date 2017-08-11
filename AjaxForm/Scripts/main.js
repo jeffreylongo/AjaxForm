@@ -38,7 +38,7 @@ let sendForm = () => {
         url: "/api/form",
         dataType: "json",
         contentType: "application/json",
-        data: JSON.stringify(newForm),
+        data: JSON.stringify(newForm), 
         type: "POST",
         success: (data) => {
             addToList(data);

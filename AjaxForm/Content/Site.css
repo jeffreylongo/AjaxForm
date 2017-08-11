@@ -46,3 +46,7 @@ body {
     background-color: lightgrey;
 }
 
+.navbar-inverse .navbar-brand {
+    color: orange;
+}
+
