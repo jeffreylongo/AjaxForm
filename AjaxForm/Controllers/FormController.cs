@@ -38,9 +38,9 @@ namespace AjaxForm.Controllers
             {
                 db.SaveChanges();
             }
-            catch
+            catch (Exception ex)
             {
-                return Ok(form);
+                throw new Exception(ex.Message);
             }
             return Ok(form);
         }
