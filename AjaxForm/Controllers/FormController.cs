@@ -36,6 +36,7 @@ namespace AjaxForm.Controllers
         [HttpPost]
         public IHttpActionResult AddForm([FromBody]FormModel form)
         {
+            //grab data and add new form 
             var db = new FormContext();
             db.Forms.Add(form);
             try
@@ -46,6 +47,26 @@ namespace AjaxForm.Controllers
             {
                 throw new Exception(ex.Message);
             }
+
+            // Session per user
+            if (HttpContext.Current.Session != null
+                && HttpContext.Current.Session["LOGIN"] != null)
+            {
+                var userSession = new UserSessionDataModel
+                {
+                    FirstName = form.FirstName,
+                    LastName = form.LastName,
+                    Phone = form.Phone,
+                    Cell = form.Cell,
+                    EMail = form.EMail,
+                    OptOut = form.OptOut
+                };
+
+                HttpContext.Current.Session["forms"] = userSession;
+
+            }
+
+
             return Ok(form);
         }
     }
