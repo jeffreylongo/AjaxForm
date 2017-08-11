@@ -12,6 +12,7 @@ namespace AjaxForm.Controllers
     {
         public static List<FormModel> listOfForms = new List<FormModel>
         {
+            //setting up some data to send to DOM using the FormModel
             new FormModel{ Id = 1,
                 FirstName = "Jeff",
                 LastName = "Longo",
