@@ -26,6 +26,10 @@ let addToList = (data) => {
 let sendForm = () => {
 
     var modelObj = {};
+    modelObj.Id = $('#id').val();
+    if (modelObj.Id = null) {
+        modelObj.Id = modelObj.Phone;
+    }
     modelObj.FirstName = $('#firstName').val();
     modelObj.LastName = $('#lastName').val();
     modelObj.Phone = $('#phone').val();
