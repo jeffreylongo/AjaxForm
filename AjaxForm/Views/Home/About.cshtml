@@ -1,7 +1,14 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿@using AjaxForm.Models;
 
-<p>Use this area to provide additional information.</p>
+@{
+    ViewBag.Title = "Session Leads";
+}
+
+<div class="sessionWrapper">
+    <h2>@ViewBag.Title.</h2>
+
+    <p>Review leads entered this session:</p>
+    <p>@HttpContext.Current.Session["forms"].ToString();</p>
+</div>
+
+
