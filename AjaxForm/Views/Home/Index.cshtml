@@ -3,6 +3,7 @@
 }
 
 <div class="wrapper">
+  <div class="50">
     <div class="form-signin">
         <h2 class="form-signin-heading">Lead Entry</h2>
         <input class="form-control" id ="firstName" placeholder="First Name" required="" />
@@ -20,17 +21,20 @@
             <input type="checkbox" value="optOut" id="optOut" name="optOut"> Opt out of Email
         </label>
         <div class="submitButton">
-            <button onclick="sendForm();" class="btn btn-lg btn-primary" type="submit">Add Lead</button>
+            <button onclick="sendForm();" class="btn btn-lg btn-warning" type="submit">Add Lead</button>
         </div>
     </div>
-    <div class="jumbotron">
-        <h2>Hot Leads</h2>
-        <ul id="formData"></ul>
-        <div class="sessionButton">
-            <div class="wrapperBg"></div>
-            <button onclick="location.href='/Home/About/'" class="btn btn-lg btn-success" type="button">Session Leads</button>
+  </div><!--end div 50-->
+    <div class="50">
+        <div class="jumbotron">
+            <h2>Hot Leads</h2>
+            <ul id="formData"></ul>
+            <div class="sessionButton">
+                <div class="wrapperBg"></div>
+                <button onclick="location.href='/Home/About/'" class="btn btn-lg btn-warning" type="button">Session Leads</button>
+            </div>
         </div>
-    </div>
+    </div><!--end div 50-->
 </div>
 
 <hr />
