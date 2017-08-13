@@ -8,8 +8,15 @@
     <h2>@ViewBag.Title.</h2>
 
     <p>Review leads entered this session:</p>
-    @*<p>@HttpContext.Current.Session["forms"].ToString();</p>*@
-    <h3>From Session @ViewBag.FromSession</h3>
+
+    @{
+        if (Session["forms"] != null)
+        {
+            var listBackFromSession = (IEnumerable<FormModel>)Session["forms"];
+            <h4>@ViewBag.listBackFromSession;</h4>
+        }
+    }
+
 </div>
 
 

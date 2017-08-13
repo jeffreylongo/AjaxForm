@@ -23,8 +23,6 @@ textarea {
     max-width: 280px;
 }
 
-@import "bourbon";
-
 body {
 	background: #eee !important;	
     margin-left: 0;
@@ -52,8 +50,9 @@ body {
   flex-wrap: wrap;
 
 }
-
-.50 {width:50%;}
+.fifty {
+    width: 50%;
+}
 
 .form-signin {
   max-width: 380px;

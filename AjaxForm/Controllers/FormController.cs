@@ -10,6 +10,7 @@ using System.Web;
 
 
 
+
 namespace AjaxForm.Controllers
 {
     public class FormController : ApiController
@@ -48,24 +49,18 @@ namespace AjaxForm.Controllers
                 throw new Exception(ex.Message);
             }
 
-            // Session per user
+            //add user session data
             if (HttpContext.Current.Session != null
                 && HttpContext.Current.Session["forms"] != null)
             {
-                var userSession = new UserSessionDataModel
+                var sessionForms = HttpContext.Current.Session["forms"];
+                if (sessionForms == null)
                 {
-                    FirstName = form.FirstName,
-                    LastName = form.LastName,
-                    Phone = form.Phone,
-                    Cell = form.Cell,
-                    EMail = form.EMail,
-                    OptOut = form.OptOut
-                };
-
-                HttpContext.Current.Session["forms"] = userSession;
-                //@ViewBag.FromSession = HttpContext.Current.Session["forms"];
-
+                    HttpContext.Current.Session.Add("forms", listOfForms);
+                }
             }
+            //ViewBag.FromSession = HttpContext.Current.Session["forms"];
+
             return Ok(form);
         }
     }
