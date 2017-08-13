@@ -9,13 +9,15 @@
 
     <p>Review leads entered this session:</p>
 
-    @{
+    @*@{
         if (Session["forms"] != null)
         {
             var listBackFromSession = (IEnumerable<FormModel>)Session["forms"];
             <h4>@ViewBag.listBackFromSession;</h4>
         }
-    }
+    }*@
+    <h2>Session Time: @ViewBag.SessionTime</h2>
+    <h5>Session Key: @ViewBag.SessionKey</h5>
 
 </div>
 

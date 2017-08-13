@@ -17,6 +17,19 @@ namespace AjaxForm.Controllers
 
         public ActionResult About()
         {
+            // add session time per user
+            var sessionTime = Session["userTime"];
+            var sessionUserKey = Session["userKey"];
+            if (sessionTime == null)
+            {
+                Session.Add("userTime", DateTime.Now);
+            }
+            if (sessionUserKey == null)
+            {
+                Session.Add("userKey", Guid.NewGuid());
+            }
+            ViewBag.SessionTime = Session["userTime"];
+            ViewBag.SessionKey = Session["userKey"];
 
             return View();
         }
