@@ -9,8 +9,6 @@ using AjaxForm.DataContext;
 using System.Web;
 
 
-
-
 namespace AjaxForm.Controllers
 {
     public class FormController : ApiController
@@ -59,7 +57,7 @@ namespace AjaxForm.Controllers
                     HttpContext.Current.Session.Add("forms", listOfForms);
                 }
             }
-            //ViewBag.FromSession = HttpContext.Current.Session["forms"];
+            //ViewBag.FromSession = HttpContext.Current.Session["forms"]; 
 
             return Ok(form);
         }

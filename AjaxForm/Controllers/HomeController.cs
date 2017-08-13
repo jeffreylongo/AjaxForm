@@ -9,6 +9,7 @@ namespace AjaxForm.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
@@ -16,6 +17,7 @@ namespace AjaxForm.Controllers
 
         public ActionResult About()
         {
+            var sessionData = Session["forms"];
 
             return View();
         }
