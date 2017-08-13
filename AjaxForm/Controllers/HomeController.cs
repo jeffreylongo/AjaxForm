@@ -17,7 +17,6 @@ namespace AjaxForm.Controllers
 
         public ActionResult About()
         {
-            var sessionData = Session["forms"];
 
             return View();
         }
